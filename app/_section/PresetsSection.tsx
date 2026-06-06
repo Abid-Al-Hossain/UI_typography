@@ -332,8 +332,8 @@ export default function PresetsSection({ state, applyPreset }: Props) {
                           {previewText(previewState)}
                         </p>
                         <div className="mt-3 flex flex-wrap gap-2">
-                          {preset.tags.slice(0, 4).map((tag) => (
-                            <BadgeChip key={tag} label={tag} />
+                          {preset.tags.slice(0, 4).map((tag, tagIndex) => (
+                            <BadgeChip key={`${tag}-${tagIndex}`} label={tag} />
                           ))}
                         </div>
                       </div>
