@@ -51,6 +51,16 @@ function buildSharedTextStyle(state: TypographyState) {
     whiteSpace: state.whiteSpace,
     textOverflow: state.textOverflow,
     overflow: state.textOverflow === "ellipsis" ? "hidden" : "visible",
+    hyphens: state.hyphens,
+    wordBreak: state.wordBreak,
+    overflowWrap: state.overflowWrap,
+    textIndent: state.textIndent,
+    columnCount: state.columnCount > 1 ? state.columnCount : undefined,
+    columnGap: state.columnCount > 1 ? state.columnGap : undefined,
+    columnRule: state.columnCount > 1 && state.columnRule !== "none" ? state.columnRule : undefined,
+    orphans: state.orphans,
+    widows: state.widows,
+    fontFeatureSettings: state.fontFeatureSettings,
   };
 }
 

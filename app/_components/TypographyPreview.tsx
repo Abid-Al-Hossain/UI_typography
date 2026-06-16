@@ -56,6 +56,16 @@ export function TypographyPreview({
     whiteSpace: state.whiteSpace,
     textOverflow: state.textOverflow,
     overflow: state.textOverflow === "ellipsis" ? "hidden" : undefined,
+    hyphens: state.hyphens,
+    wordBreak: state.wordBreak,
+    overflowWrap: state.overflowWrap,
+    textIndent: state.textIndent,
+    columnCount: state.columnCount > 1 ? state.columnCount : undefined,
+    columnGap: state.columnCount > 1 ? state.columnGap : undefined,
+    columnRule: state.columnCount > 1 && state.columnRule !== "none" ? state.columnRule : undefined,
+    orphans: state.orphans,
+    widows: state.widows,
+    fontFeatureSettings: state.fontFeatureSettings,
   };
 
   const resolvePreviewColor = (value?: string) => {
@@ -93,12 +103,14 @@ export function TypographyPreview({
       />
 
       <div
-        className="relative z-10 flex w-full max-w-xl flex-col items-center justify-center rounded-[28px] border px-8 py-6"
+        className="relative z-10 flex w-full max-w-xl flex-col items-center justify-center border"
         style={{
           background: previewSurface,
           color: textColor,
           borderColor: "color-mix(in oklab, var(--border) 70%, transparent)",
           boxShadow: "0 24px 64px -36px rgba(15, 23, 42, 0.28)",
+          borderRadius: state.previewRadius,
+          padding: state.previewPadding,
         }}
       >
         {activeSection === "scale" && (
