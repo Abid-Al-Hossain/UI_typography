@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useDeferredValue } from "react";
+import ContrastGuard from "@/components/shared/color/ContrastGuard";
 import AppShell from "@/components/shared/layout/AppShell";
 import { PlaygroundLayout } from "@/components/shared/layout/PlaygroundLayout";
 import PreviewDownloadPanel from "@/components/shared/layout/SharedPreviewDownloadPanel";
@@ -235,6 +236,7 @@ export default function TypographyPlayground() {
         controls={controls}
         preview={preview}
       />
-    </AppShell>
+
+<ContrastGuard /></AppShell>
   );
 }
