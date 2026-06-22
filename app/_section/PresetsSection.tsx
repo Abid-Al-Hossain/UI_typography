@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { SectionCard, LabeledField, Segmented } from "@/components/shared/layout/ui";
+import { SectionCard, LabeledField, FilterSelect } from "@/components/shared/layout/ui";
 import { SYSTEM_FONTS } from "../types";
 import { TYPOGRAPHY_PRESETS, TYPOGRAPHY_PRESET_COUNT, type TypographyPreset } from "../_data/typographyPresets";
 import type { TypographyState } from "../types";
@@ -114,7 +114,7 @@ export default function PresetsSection({ state, applyPreset }: Props) {
           </LabeledField>
 
           <LabeledField label="Font Bucket">
-            <Segmented
+            <FilterSelect
               value={bucketFilter}
               onChange={(value) => {
                 setBucketFilter(value);
